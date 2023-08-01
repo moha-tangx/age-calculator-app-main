@@ -42,4 +42,13 @@ main{
     display:flex;
     align-items: center;
     justify-content: center;
+    background: var(--Off-white);
+}
+
+.calculator{
+    width: 90%;
+    margin: auto;
+    background: var(--Off-white);
+    border-bottom-right-radius: 2rem;
+    padding: 6% 4%;
 }
