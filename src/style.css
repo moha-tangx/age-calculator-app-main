@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after{
+padding:0;
+margin: 0;
+box-sizing: border-box;
+text-decoration: none;
+color-scheme: light dark;
+list-style: none;
+}
+
+:root{
+/* neutral colors */
+--White: hsl(0, 0%, 100%);
+--Off-white: hsl(0, 0%, 94%);
+--Light-grey: hsl(0, 0%, 86%);
+--Smokey-grey: hsl(0, 1%, 44%);
+--Off-black: hsl(0, 0%, 8%);
+
+/* primary */
+--Purple: hsl(259, 100%, 65%);
+--Light-red: hsl(0, 100%, 67%);
+
+/* font weights */
+--thick:400i;
+--thicker:700;
+--thickest:800i;
+}
+
+@font-face {
+    font-family: MyFontRegular;
+    src: url(../assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: MyFontItalic;
+    src: url(../assets/fonts/Poppins-Italic.ttf);
+}
+
+main{
+    height: 100svh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
