@@ -11,36 +11,43 @@
     <main>
         <div class="calculator">
             <form action="">
-                <div class="input" id="dayInput">
-                    <div class="label">day</div>
-                    <input type="number" name="day" id="day">
+                <div class="input-fields">
+                    <div class="input" id="dayInput">
+                        <div class="label">day</div>
+                        <input type="number" name="day" id="day">
+                    </div>
+                    <div class="input" id="monthInput">
+                        <div class="label">month</div>
+                        <input type="number" name="month" id="month">
+                    </div>
+                    <div class="input" id="yearInput">
+                        <div class="label">year</div>
+                        <input type="number" name="year" id="year">
+                    </div>
                 </div>
-                <div class="input" id="monthInput">
-                    <div class="label">month</div>
-                    <input type="number" name="month" id="month">
-                </div>
-                <div class="input" id="yearInput">
-                    <div class="label">year</div>
-                    <input type="number" name="year" id="year">
+                <div class="submit">
+                    <hr id="hr">
+                    <button type="submit" id="submit">
+                        <img src="../assets/images/icon-arrow.svg" alt="">
+                    </button>
                 </div>
             </form>
-            <div class="output">
+            <div class="outputs">
                 <div class="output">
-                    <span class="output" id="output">38</span>
+                    <span id="outputYear">38</span>
                     <span>years</span>
-            </div>
+                </div>
                 <div class="output">
-                    <span class="output" id="output">3</span>
+                    <span id="outputMonths">3</span>
                     <span>months</span>
                 </div>
                 <div class="output">
-                    <span class="output" id="output">26</span>
+                    <span id="outputDays">26</span>
                     <span>days</span>
                 </div>
             </div>
         </div>
     </main>
-    <script src="./app.js"></script>
+    <script src="./app.js" async></script>
 </body>
-
 </html>

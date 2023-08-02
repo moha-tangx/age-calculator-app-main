@@ -1,54 +1,139 @@
 *,
 *::before,
-*::after{
-padding:0;
-margin: 0;
-box-sizing: border-box;
-text-decoration: none;
-color-scheme: light dark;
-list-style: none;
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color-scheme: light dark;
+    list-style: none;
+    outline: none;
 }
 
-:root{
-/* neutral colors */
---White: hsl(0, 0%, 100%);
---Off-white: hsl(0, 0%, 94%);
---Light-grey: hsl(0, 0%, 86%);
---Smokey-grey: hsl(0, 1%, 44%);
---Off-black: hsl(0, 0%, 8%);
+:root {
+    /* neutral colors */
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
 
-/* primary */
---Purple: hsl(259, 100%, 65%);
---Light-red: hsl(0, 100%, 67%);
+    /* primary */
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
 
-/* font weights */
---thick:400i;
---thicker:700;
---thickest:800i;
+    /* font weights */
+    --thick: 400;
+    --thicker: 700;
+    --thickest: 900;
 }
 
 @font-face {
     font-family: MyFontRegular;
     src: url(../assets/fonts/Poppins-Regular.ttf);
 }
+
 @font-face {
     font-family: MyFontItalic;
     src: url(../assets/fonts/Poppins-Italic.ttf);
 }
-
-main{
-    height: 100svh;
-    width: 100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--Off-white);
+@font-face {
+    font-family: MyFontBoldItalic;
+    src: url(../assets/fonts/Poppins-ExtraBoldItalic.ttf);
 }
 
-.calculator{
+main {
+    height: 100svh;
+    width: 100%;
+    background: var(--Light-grey);
+    border: 1px solid transparent;
+}
+
+.calculator {
     width: 90%;
-    margin: auto;
-    background: var(--Off-white);
-    border-bottom-right-radius: 2rem;
-    padding: 6% 4%;
+    margin:15% auto;
+    background: var(--White);
+    padding: 8% 4%;
+    border-radius: 2rem;
+    border-bottom-right-radius: 5rem;
+}
+
+form>.input-fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5%;
+}
+
+.label {
+    padding: 5px;
+    color: var(--Smokey-grey);
+    font-weight: var(--thicker);
+    text-transform: uppercase;
+    font-family: MyFontRegular;
+    letter-spacing: 2px;
+}
+
+input {
+    padding: 10% 0;
+    border: 2px solid var(--Light-grey);
+    border-radius: 1rem;
+    width: 100%;
+    text-indent: 20%;
+    font-weight: var(--thicker);
+    font-size: 2rem;
+    outline: none;
+}
+
+
+
+input:hover {
+    border-color: var(--Purple);
+}
+
+input:focus {
+    border-color: var(--Purple);
+}
+.submit {
+    position: relative;
+    padding: 10% 0 0 0 ;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button[type] {
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    z-index: 2;
+}
+
+#hr {
+    height: 4px;
+    width: 90%;
+    position: absolute;
+    z-index: 1;
+}
+
+.submit>button {
+    background: var(--Purple);
+    padding: 3%;
+}
+button>img{
+    transform: scale(60%);
+}
+img {
+    border-radius: 50%;
+}
+
+
+.outputs>.output>span{
+    font-size: 3rem;
+    font-weight: var(--thickest,800);
+    font-family:MyFontBoldItalic;
+}
+.output>:first-of-type{
+    color: var(--Purple);
 }
