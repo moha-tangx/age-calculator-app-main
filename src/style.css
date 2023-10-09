@@ -1,26 +1,26 @@
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
-    text-decoration: none;
     color-scheme: light dark;
     list-style: none;
-    outline: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    user-select: none;
 }
 
 :root {
     /* neutral colors */
-    --White: hsl(0, 0%, 100%);
-    --Off-white: hsl(0, 0%, 94%);
     --Light-grey: hsl(0, 0%, 86%);
-    --Smokey-grey: hsl(0, 1%, 44%);
     --Off-black: hsl(0, 0%, 8%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --White: hsl(0, 0%, 100%);
 
     /* primary */
-    --Purple: hsl(259, 100%, 65%);
     --Light-red: hsl(0, 100%, 67%);
+    --Purple: hsl(259, 100%, 65%);
 
     /* font weights */
     --thick: 400;
@@ -37,55 +37,69 @@
     font-family: MyFontItalic;
     src: url(../assets/fonts/Poppins-Italic.ttf);
 }
+
 @font-face {
     font-family: MyFontBoldItalic;
     src: url(../assets/fonts/Poppins-ExtraBoldItalic.ttf);
 }
 
 main {
-    height: 100svh;
-    width: 100%;
     background: var(--Light-grey);
-    border: 1px solid transparent;
+    min-height: 100vh;
+    overflow: hidden;
+    width: 100%;
 }
 
 .calculator {
-    width: 90%;
-    margin:15% auto;
     background: var(--White);
-    padding: 8% 4%;
     border-radius: 2rem;
     border-bottom-right-radius: 5rem;
+    margin: 15% auto;
+    padding: 8% 4%;
+    width: 90%;
 }
 
-form>.input-fields {
+.input-fields {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     gap: 5%;
+    justify-content: center;
+    background: url();
 }
 
-.label {
-    padding: 5px;
+.input.err .label {
+    color: var(--Light-red);
+}
+
+.input.err input {
+    border-color: red;
+}
+
+.input.err .err-msg {
+    color: var(--Light-red);
+    text-align: center;
+}
+
+.input>.label {
     color: var(--Smokey-grey);
     font-weight: var(--thicker);
-    text-transform: uppercase;
     font-family: MyFontRegular;
     letter-spacing: 2px;
+    padding: 5px;
+    text-transform: uppercase;
 }
 
 input {
-    padding: 10% 0;
+    background-color: var(--White);
     border: 2px solid var(--Light-grey);
-    border-radius: 1rem;
-    width: 100%;
-    text-indent: 20%;
+    border-radius: .5rem;
+    color: var(--Off-black);
     font-weight: var(--thicker);
-    font-size: 2rem;
+    font-size: 1.8rem;
     outline: none;
+    padding: 10% 0;
+    text-indent: 10%;
+    width: 100%;
 }
-
-
 
 input:hover {
     border-color: var(--Purple);
@@ -94,26 +108,32 @@ input:hover {
 input:focus {
     border-color: var(--Purple);
 }
+
 .submit {
-    position: relative;
-    padding: 10% 0 0 0 ;
-    height: fit-content;
-    display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
+    height: fit-content;
+    position: relative;
+    padding-top: 10%;
 }
 
 button[type] {
     border-radius: 50%;
     border: none;
+    cursor: pointer;
     outline: none;
     z-index: 2;
+
+    &:hover {
+        background-color: var(--Off-black);
+    }
 }
 
 #hr {
     height: 4px;
-    width: 90%;
     position: absolute;
+    width: 90%;
     z-index: 1;
 }
 
@@ -121,19 +141,55 @@ button[type] {
     background: var(--Purple);
     padding: 3%;
 }
-button>img{
+
+button>img {
     transform: scale(60%);
 }
+
 img {
     border-radius: 50%;
 }
 
-
-.outputs>.output>span{
-    font-size: 3rem;
-    font-weight: var(--thickest,800);
-    font-family:MyFontBoldItalic;
+.outputs>.output>span {
+    color: var(--Off-black);
+    font-size: 3.3rem;
+    font-weight: var(--thickest, 800);
+    font-family: MyFontBoldItalic;
 }
-.output>:first-of-type{
-    color: var(--Purple);
+
+.output>:first-of-type {
+    color: var(--Purple) !important;
+}
+
+@media only screen and (min-width:550px) {
+    main {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .input-fields {
+        justify-content: start;
+        max-width: 80%;
+    }
+
+    .calculator {
+        max-height: 80%;
+        max-width: 60%;
+        margin: 0;
+        padding-top: 2%;
+    }
+
+    #hr {
+        width: 100%;
+    }
+
+    .submit {
+        justify-content: end;
+        padding: 0;
+    }
+
+    .outputs>.output>span {
+        font-size: 4rem;
+    }
 }

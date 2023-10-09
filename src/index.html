@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar" content="#854DFF">
+    <meta name="theme-color" content="#854DFF">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../assets/images/Moha_tangxLogo.png">
+    <link rel="shortcut icon" href="../assets/images/Moha_tangxLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="../assets/images/Moha_tangx logo.png" type="image/x-icon">
-    <title>Document</title>
+    <meta name="description"
+        content="age calculator  / age calculator app / age calculation website / calculate my age">
+    <title>Age calculator</title>
 </head>
 <body>
     <main>
         <div class="calculator">
-            <form action="">
+            <form>
                 <div class="input-fields">
-                    <div class="input" id="dayInput">
+                    <div class="input " id="dayInput">
                         <div class="label">day</div>
-                        <input type="number" name="day" id="day">
+                        <input type="number" name="day" id="day" placeholder="DD">
+                        <span class="err-msg">
+                        </span>
                     </div>
                     <div class="input" id="monthInput">
                         <div class="label">month</div>
-                        <input type="number" name="month" id="month">
+                        <input type="number" name="month" id="month" placeholder="MM">
+                        <span class="err-msg">
+                        </span>
                     </div>
                     <div class="input" id="yearInput">
                         <div class="label">year</div>
-                        <input type="number" name="year" id="year">
+                        <input type="number" name="year" id="year" placeholder="YYYY">
+                        <span class="err-msg">
+                        </span>
                     </div>
                 </div>
                 <div class="submit">
@@ -34,15 +49,15 @@
             </form>
             <div class="outputs">
                 <div class="output">
-                    <span id="outputYear">38</span>
+                    <span id="outputYear">--</span>
                     <span>years</span>
                 </div>
                 <div class="output">
-                    <span id="outputMonths">3</span>
+                    <span id="outputMonths">--</span>
                     <span>months</span>
                 </div>
                 <div class="output">
-                    <span id="outputDays">26</span>
+                    <span id="outputDays">--</span>
                     <span>days</span>
                 </div>
             </div>
@@ -50,4 +65,7 @@
     </main>
     <script src="./app.js" async></script>
 </body>
+
+
+
 </html>

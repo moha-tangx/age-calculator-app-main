@@ -1,0 +1,22 @@
+{
+  "name": "age calculator",
+  "short_name": "age calc",
+  "start_url": "./src/index.html",
+  "description": "calculate your age",
+  "serviceworker": {
+    "src": "./serviceWorker.js"
+  },
+  "icons": [
+    {
+      "src": "./assets/images/Moha_tangxLogo.png",
+      "sizes": "100x100",
+      "type": "image/jpg"
+    }
+  ],
+  "theme_color": "#854DFF",
+  "background_color": "#55AEFF",
+  "display": "standalone",
+  "display_override": ["fullscreen", "minimal-ui"],
+  "orientation": "portrait",
+  "protocol_handlers": []
+}
