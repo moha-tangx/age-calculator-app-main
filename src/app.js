@@ -1,3 +1,4 @@
+// @ts-check
 "usestrict";
 
 const inputs = document.querySelectorAll("input");
@@ -52,9 +53,9 @@ function validate() {
 }
 
 function calculate() {
-  let Days = currentDay - birthDay.value.trim();
-  let Months = currentMonth - birthMonth.value.trim();
-  let Years = currentYear - birthYear.value.trim();
+  let Days = currentDay - +birthDay.value.trim();
+  let Months = currentMonth - +birthMonth.value.trim();
+  let Years = currentYear - +birthYear.value.trim();
 
   Days < 0 && ((Months -= 1), (Days += year_Months[currentMonth - 1]));
   Months < 0 && ((Months += 12), (Years -= 1));
@@ -65,17 +66,20 @@ function calculate() {
 
   function outputAge() {
     if (daysAnimi <= Days) {
-      daysAnimi < 10 && (daysAnimi = "0" + daysAnimi);
+      daysAnimi < 10 && (daysAnimi = 0 + daysAnimi);
+      // @ts-ignore
       daysOut.textContent = daysAnimi;
       daysAnimi++;
     }
     if (monthsAnimi <= Months) {
-      monthsAnimi < 10 && (monthsAnimi = "0" + monthsAnimi);
+      monthsAnimi < 10 && (monthsAnimi = 0 + monthsAnimi);
+      // @ts-ignore
       monthsOut.textContent = monthsAnimi;
       monthsAnimi++;
     }
     if (yearsAnimi <= Years) {
-      yearsAnimi < 10 && (yearsAnimi = "0" + yearsAnimi);
+      yearsAnimi < 10 && (yearsAnimi = 0 + yearsAnimi);
+      // @ts-ignore
       yearsOut.textContent = yearsAnimi;
       yearsAnimi++;
     }
@@ -94,6 +98,7 @@ function calculate() {
   }, 100);
 }
 
+// @ts-ignore
 button.addEventListener("click", (e) => {
   e.preventDefault();
   check();
@@ -103,7 +108,7 @@ button.addEventListener("click", (e) => {
   if ("serviceWorker" in navigator) {
     try {
       let reg = await navigator.serviceWorker.register("../serviceWorker.js");
-      console.log("regtered serviceworkr successfullt",reg)
+      console.log("regtered serviceworkr successfullt", reg);
     } catch (error) {
       console.error("someting went wrong");
     }
