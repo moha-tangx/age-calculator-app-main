@@ -1,195 +1,195 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    color-scheme: light dark;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    user-select: none;
+  box-sizing: border-box;
+  color-scheme: light dark;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  user-select: none;
 }
 
 :root {
-    /* neutral colors */
-    --Light-grey: hsl(0, 0%, 86%);
-    --Off-black: hsl(0, 0%, 8%);
-    --Off-white: hsl(0, 0%, 94%);
-    --Smokey-grey: hsl(0, 1%, 44%);
-    --White: hsl(0, 0%, 100%);
+  /* neutral colors */
+  --Light-grey: hsl(0, 0%, 86%);
+  --Off-black: hsl(0, 0%, 8%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --White: hsl(0, 0%, 100%);
 
-    /* primary */
-    --Light-red: hsl(0, 100%, 67%);
-    --Purple: hsl(259, 100%, 65%);
+  /* primary */
+  --Light-red: hsl(0, 100%, 67%);
+  --Purple: hsl(259, 100%, 65%);
 
-    /* font weights */
-    --thick: 400;
-    --thicker: 700;
-    --thickest: 900;
+  /* font weights */
+  --thick: 400;
+  --thicker: 700;
+  --thickest: 900;
 }
 
 @font-face {
-    font-family: MyFontRegular;
-    src: url(../assets/fonts/Poppins-Regular.ttf);
+  font-family: MyFontRegular;
+  src: url(./assets/fonts/Poppins-Regular.ttf);
 }
 
 @font-face {
-    font-family: MyFontItalic;
-    src: url(../assets/fonts/Poppins-Italic.ttf);
+  font-family: MyFontItalic;
+  src: url(./assets/fonts/Poppins-Italic.ttf);
 }
 
 @font-face {
-    font-family: MyFontBoldItalic;
-    src: url(../assets/fonts/Poppins-ExtraBoldItalic.ttf);
+  font-family: MyFontBoldItalic;
+  src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf);
 }
 
 main {
-    background: var(--Light-grey);
-    min-height: 100vh;
-    overflow: hidden;
-    width: 100%;
+  background: var(--Light-grey);
+  min-height: 100vh;
+  overflow: hidden;
+  width: 100%;
 }
 
 .calculator {
-    background: var(--White);
-    border-radius: 2rem;
-    border-bottom-right-radius: 5rem;
-    margin: 15% auto;
-    padding: 8% 4%;
-    width: 90%;
+  background: var(--White);
+  border-radius: 2rem;
+  border-bottom-right-radius: 5rem;
+  margin: 15% auto;
+  padding: 8% 4%;
+  width: 90%;
 }
 
 .input-fields {
-    display: flex;
-    gap: 5%;
-    justify-content: center;
-    background: url();
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+  background: url();
 }
 
 .input.err .label {
-    color: var(--Light-red);
+  color: var(--Light-red);
 }
 
 .input.err input {
-    border-color: red;
+  border-color: red;
 }
 
 .input.err .err-msg {
-    color: var(--Light-red);
-    text-align: center;
+  color: var(--Light-red);
+  text-align: center;
 }
 
-.input>.label {
-    color: var(--Smokey-grey);
-    font-weight: var(--thicker);
-    font-family: MyFontRegular;
-    letter-spacing: 2px;
-    padding: 5px;
-    text-transform: uppercase;
+.input > .label {
+  color: var(--Smokey-grey);
+  font-weight: var(--thicker);
+  font-family: MyFontRegular;
+  letter-spacing: 2px;
+  padding: 5px;
+  text-transform: uppercase;
 }
 
 input {
-    background-color: var(--White);
-    border: 2px solid var(--Light-grey);
-    border-radius: .5rem;
-    color: var(--Off-black);
-    font-weight: var(--thicker);
-    font-size: 1.8rem;
-    outline: none;
-    padding: 10% 0;
-    text-indent: 10%;
-    width: 100%;
+  background-color: var(--White);
+  border: 2px solid var(--Light-grey);
+  border-radius: 0.5rem;
+  color: var(--Off-black);
+  font-weight: var(--thicker);
+  font-size: 1.8rem;
+  outline: none;
+  padding: 10% 0;
+  text-indent: 10%;
+  width: 100%;
 }
 
 input:hover {
-    border-color: var(--Purple);
+  border-color: var(--Purple);
 }
 
 input:focus {
-    border-color: var(--Purple);
+  border-color: var(--Purple);
 }
 
 .submit {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: fit-content;
-    position: relative;
-    padding-top: 10%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: fit-content;
+  position: relative;
+  padding-top: 10%;
 }
 
 button[type] {
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    z-index: 2;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
 
-    &:hover {
-        background-color: var(--Off-black);
-    }
+  &:hover {
+    background-color: var(--Off-black);
+  }
 }
 
 #hr {
-    height: 4px;
-    position: absolute;
-    width: 90%;
-    z-index: 1;
+  height: 4px;
+  position: absolute;
+  width: 90%;
+  z-index: 1;
 }
 
-.submit>button {
-    background: var(--Purple);
-    padding: 3%;
+.submit > button {
+  background: var(--Purple);
+  padding: 3%;
 }
 
-button>img {
-    transform: scale(60%);
+button > img {
+  transform: scale(60%);
 }
 
 img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
-.outputs>.output>span {
-    color: var(--Off-black);
-    font-size: 3.3rem;
-    font-weight: var(--thickest, 800);
-    font-family: MyFontBoldItalic;
+.outputs > .output > span {
+  color: var(--Off-black);
+  font-size: 3.3rem;
+  font-weight: var(--thickest, 800);
+  font-family: MyFontBoldItalic;
 }
 
-.output>:first-of-type {
-    color: var(--Purple) !important;
+.output > :first-of-type {
+  color: var(--Purple) !important;
 }
 
-@media only screen and (min-width:550px) {
-    main {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-    }
+@media only screen and (min-width: 550px) {
+  main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 
-    .input-fields {
-        justify-content: start;
-        max-width: 80%;
-    }
+  .input-fields {
+    justify-content: start;
+    max-width: 80%;
+  }
 
-    .calculator {
-        max-height: 80%;
-        max-width: 60%;
-        margin: 0;
-        padding-top: 2%;
-    }
+  .calculator {
+    max-height: 80%;
+    max-width: 60%;
+    margin: 0;
+    padding-top: 2%;
+  }
 
-    #hr {
-        width: 100%;
-    }
+  #hr {
+    width: 100%;
+  }
 
-    .submit {
-        justify-content: end;
-        padding: 0;
-    }
+  .submit {
+    justify-content: end;
+    padding: 0;
+  }
 
-    .outputs>.output>span {
-        font-size: 4rem;
-    }
+  .outputs > .output > span {
+    font-size: 4rem;
+  }
 }
