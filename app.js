@@ -44,14 +44,15 @@ function valid() {
 
   if (
     +birthDay.value > year_Months[+birthMonth.value - 1] ||
-    +birthDay.value > 31
+    +birthDay.value > 31 ||
+    +birthDay.value < 1
   ) {
     setErr(birthDay, "must be a valid day");
   }
-  if (+birthMonth.value > year_Months.length) {
+  if (+birthMonth.value > year_Months.length || +birthMonth.value < 1) {
     setErr(birthMonth, "must be a valid month");
   }
-  if (+birthYear.value > currentYear) {
+  if (+birthYear.value > currentYear || birthYear.value < 1) {
     setErr(birthYear, "must be in the past");
   }
 
