@@ -1,71 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar" content="#854DFF">
-    <meta name="theme-color" content="#854DFF">
-    <link rel="manifest" href="../manifest.json">
-    <link rel="apple-touch-icon" href="../assets/images/Moha_tangxLogo.png">
-    <link rel="shortcut icon" href="../assets/images/Moha_tangxLogo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <meta name="description"
-        content="age calculator  / age calculator app / age calculation website / calculate my age">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar" content="#854DFF" />
+    <meta name="theme-color" content="#854DFF" />
+    <meta
+      name="description"
+      content="age calculator, age calculator app, age calculation website, calculate my age"
+    />
+    <link rel="manifest" href="./manifest.json" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/Moha_tangx logo.jpg"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="./assets/images/app-icon.png" />
+    <link rel="stylesheet" href="style.css" />
     <title>Age calculator</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div class="calculator">
-            <form>
-                <div class="input-fields">
-                    <div class="input " id="dayInput">
-                        <div class="label">day</div>
-                        <input type="number" name="day" id="day" placeholder="DD">
-                        <span class="err-msg">
-                        </span>
-                    </div>
-                    <div class="input" id="monthInput">
-                        <div class="label">month</div>
-                        <input type="number" name="month" id="month" placeholder="MM">
-                        <span class="err-msg">
-                        </span>
-                    </div>
-                    <div class="input" id="yearInput">
-                        <div class="label">year</div>
-                        <input type="number" name="year" id="year" placeholder="YYYY">
-                        <span class="err-msg">
-                        </span>
-                    </div>
-                </div>
-                <div class="submit">
-                    <hr id="hr">
-                    <button type="submit" id="submit">
-                        <img src="./assets/images/icon-arrow.svg" alt="">
-                    </button>
-                </div>
-            </form>
-            <div class="outputs">
-                <div class="output">
-                    <span id="outputYear">--</span>
-                    <span>years</span>
-                </div>
-                <div class="output">
-                    <span id="outputMonths">--</span>
-                    <span>months</span>
-                </div>
-                <div class="output">
-                    <span id="outputDays">--</span>
-                    <span>days</span>
-                </div>
+      <div class="calculator">
+        <form>
+          <div class="input-fields">
+            <div class="input" id="dayInput">
+              <div class="label">day</div>
+              <input type="number" name="day" id="day" placeholder="DD" />
+              <span class="err-msg"> </span>
             </div>
+            <div class="input" id="monthInput">
+              <div class="label">month</div>
+              <input type="number" name="month" id="month" placeholder="MM" />
+              <span class="err-msg"> </span>
+            </div>
+            <div class="input" id="yearInput">
+              <div class="label">year</div>
+              <input type="number" name="year" id="year" placeholder="YYYY" />
+              <span class="err-msg"> </span>
+            </div>
+          </div>
+          <div class="submit">
+            <hr id="hr" />
+            <button
+              type="submit"
+              id="submit"
+              aria-label="calculate"
+              accesskey="space bar"
+            >
+              <img src="./assets/images/icon-arrow.svg" alt="" />
+            </button>
+          </div>
+        </form>
+        <div class="outputs">
+          <div class="output">
+            <span id="outputYear">--</span>
+            <span>years</span>
+          </div>
+          <div class="output">
+            <span id="outputMonths">--</span>
+            <span>months</span>
+          </div>
+          <div class="output">
+            <span id="outputDays">--</span>
+            <span>days</span>
+          </div>
         </div>
+      </div>
     </main>
     <script src="./app.js" async></script>
-</body>
-
-
-
+  </body>
 </html>

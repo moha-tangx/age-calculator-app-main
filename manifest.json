@@ -1,16 +1,28 @@
 {
   "name": "age calculator",
   "short_name": "age calc",
-  "start_url": "./src/index.html",
+  "start_url": "./index.html",
   "description": "calculate your age",
+  "id": "age calaculator app",
   "serviceworker": {
     "src": "./serviceWorker.js"
   },
   "icons": [
     {
-      "src": "./assets/images/Moha_tangxLogo.png",
-      "sizes": "100x100",
-      "type": "image/jpg"
+      "src": "./assets/images/app-icon.png",
+      "sizes": "76x76",
+      "type": "image/jpg",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/images/icon-arrow.svg",
+      "sizes": "46x44",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/images/icon-arrow.svg",
+      "sizes": "144x144",
+      "type": "image/png"
     }
   ],
   "theme_color": "#854DFF",

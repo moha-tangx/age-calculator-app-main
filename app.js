@@ -1,39 +1,47 @@
-// @ts-check
 "usestrict";
 
-const inputs = document.querySelectorAll("input");
-const button = document.querySelector("button");
-const [birthDay, birthMonth, birthYear] = inputs;
+// input fields and submit button
+const inputs = document.querySelectorAll("input"),
+  button = document.querySelector("button"),
+  [birthDay, birthMonth, birthYear] = inputs;
 
-let yearsOut = document.getElementById("outputYear");
-let monthsOut = document.getElementById("outputMonths");
-let daysOut = document.getElementById("outputDays");
+//  years months and days outputs
+let yearsOut = document.getElementById("outputYear"),
+  monthsOut = document.getElementById("outputMonths"),
+  daysOut = document.getElementById("outputDays");
 
-let date = new Date();
-let currentYear = date.getFullYear();
-let currentMonth = date.getMonth();
-let currentDay = date.getDate();
+// current yaer month and day (today's date)
+let date = new Date(),
+  currentYear = date.getFullYear(),
+  currentMonth = date.getMonth(),
+  currentDay = date.getDate();
 
-let year_Months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+// months of the year
+const year_Months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 //  set and remove error function
 const setErr = (field, message) => {
+  // set error
   field.nextElementSibling.textContent = message;
   field.parentElement.classList.add("err");
+  field.error = true;
+  // remove error after 2 seconds
   setTimeout(() => {
     field.nextElementSibling.textContent = "";
     field.parentElement.classList.remove("err");
+    field.error = false;
   }, 2000);
 };
 
-// check if the field is empty
-function check() {
-  inputs.forEach((input) => {
-    input.value == "" ? setErr(input, "cant be empty") : validate();
-  });
-}
+function valid() {
+  // checking for leapYear
+  +birthYear.value % 4 == 0 && (year_Months[1] = 29);
 
-function validate() {
+  // checking  for empty fields
+  inputs.forEach((input) => {
+    input.value == "" && setErr(input, "cant be empty");
+  });
+
   if (
     +birthDay.value > year_Months[+birthMonth.value - 1] ||
     +birthDay.value > 31
@@ -45,52 +53,45 @@ function validate() {
   }
   if (+birthYear.value > currentYear) {
     setErr(birthYear, "must be in the past");
-  } else {
-    calculate();
   }
-  // checking for leapYear
-  +birthYear.value % 4 == 0 && (year_Months[1] = 29);
+
+  return birthDay.error || birthMonth.error || birthYear.error;
 }
 
 function calculate() {
-  let Days = currentDay - +birthDay.value.trim();
-  let Months = currentMonth - +birthMonth.value.trim();
-  let Years = currentYear - +birthYear.value.trim();
+  let Days = currentDay - +birthDay.value.trim(),
+    Months = currentMonth - +birthMonth.value.trim(),
+    Years = currentYear - +birthYear.value.trim();
 
   Days < 0 && ((Months -= 1), (Days += year_Months[currentMonth - 1]));
   Months < 0 && ((Months += 12), (Years -= 1));
 
-  let daysAnimi = 0;
-  let monthsAnimi = 0;
-  let yearsAnimi = 0;
+  let daysAnimi = 0,
+    monthsAnimi = 0,
+    yearsAnimi = 0;
 
   function outputAge() {
     if (daysAnimi <= Days) {
       daysAnimi < 10 && (daysAnimi = 0 + daysAnimi);
-      // @ts-ignore
       daysOut.textContent = daysAnimi;
       daysAnimi++;
     }
     if (monthsAnimi <= Months) {
       monthsAnimi < 10 && (monthsAnimi = 0 + monthsAnimi);
-      // @ts-ignore
       monthsOut.textContent = monthsAnimi;
       monthsAnimi++;
     }
     if (yearsAnimi <= Years) {
       yearsAnimi < 10 && (yearsAnimi = 0 + yearsAnimi);
-      // @ts-ignore
       yearsOut.textContent = yearsAnimi;
       yearsAnimi++;
     }
   }
-  // let animationInterval = null;
 
-  function animateAge() {
-    setInterval(outputAge, 100);
-  }
-  animateAge();
+  //animates age output
+  setInterval(outputAge, 100);
 
+  // clears the input after a second of calculating the age
   setTimeout(() => {
     inputs.forEach((input) => {
       input.value = "";
@@ -98,19 +99,23 @@ function calculate() {
   }, 100);
 }
 
-// @ts-ignore
 button.addEventListener("click", (e) => {
   e.preventDefault();
-  check();
+  !valid() && calculate();
 });
 
+// registering SERVICE WORKER
 (async () => {
-  if ("serviceWorker" in navigator) {
+  const onLocalHost =
+    window.location.hostname == "localhost" ||
+    window.location.hostname == "127.0.0.1";
+  if ("serviceWorker" in navigator && !onLocalHost) {
     try {
-      let reg = await navigator.serviceWorker.register("../serviceWorker.js");
-      console.log("regtered serviceworkr successfullt", reg);
+      await navigator.serviceWorker.register("./serviceWorker.js");
     } catch (error) {
-      console.error("someting went wrong");
+      const message = "someting went wrong";
+      console.error(message);
+      alert(message);
     }
   }
 })();

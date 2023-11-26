@@ -1,13 +1,16 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  color-scheme: light dark;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  user-select: none;
+@font-face {
+  font-family: MyFontRegular;
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: MyFontItalic;
+  src: url(./assets/fonts/Poppins-Italic.ttf);
+}
+
+@font-face {
+  font-family: MyFontBoldItalic;
+  src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf);
 }
 
 :root {
@@ -28,19 +31,16 @@
   --thickest: 900;
 }
 
-@font-face {
-  font-family: MyFontRegular;
-  src: url(./assets/fonts/Poppins-Regular.ttf);
-}
-
-@font-face {
-  font-family: MyFontItalic;
-  src: url(./assets/fonts/Poppins-Italic.ttf);
-}
-
-@font-face {
-  font-family: MyFontBoldItalic;
-  src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color-scheme: light dark;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  user-select: none;
 }
 
 main {
@@ -60,10 +60,10 @@ main {
 }
 
 .input-fields {
+  background: url();
   display: flex;
   gap: 5%;
   justify-content: center;
-  background: url();
 }
 
 .input.err .label {
@@ -81,8 +81,8 @@ main {
 
 .input > .label {
   color: var(--Smokey-grey);
-  font-weight: var(--thicker);
   font-family: MyFontRegular;
+  font-weight: var(--thicker);
   letter-spacing: 2px;
   padding: 5px;
   text-transform: uppercase;
@@ -90,11 +90,11 @@ main {
 
 input {
   background-color: var(--White);
-  border: 2px solid var(--Light-grey);
   border-radius: 0.5rem;
+  border: 2px solid var(--Light-grey);
   color: var(--Off-black);
-  font-weight: var(--thicker);
   font-size: 1.8rem;
+  font-weight: var(--thicker);
   outline: none;
   padding: 10% 0;
   text-indent: 10%;
@@ -111,11 +111,11 @@ input:focus {
 
 .submit {
   align-items: center;
-  justify-content: center;
   display: flex;
   height: fit-content;
-  position: relative;
+  justify-content: center;
   padding-top: 10%;
+  position: relative;
 }
 
 button[type] {
@@ -152,9 +152,9 @@ img {
 
 .outputs > .output > span {
   color: var(--Off-black);
+  font-family: MyFontBoldItalic;
   font-size: 3.3rem;
   font-weight: var(--thickest, 800);
-  font-family: MyFontBoldItalic;
 }
 
 .output > :first-of-type {
@@ -174,9 +174,9 @@ img {
   }
 
   .calculator {
+    margin: 0;
     max-height: 80%;
     max-width: 60%;
-    margin: 0;
     padding-top: 2%;
   }
 

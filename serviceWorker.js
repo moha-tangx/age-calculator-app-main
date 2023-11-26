@@ -2,10 +2,14 @@ const version = "v1";
 
 const resources = [
   "/",
-  "/src/index.js",
-  "/src/app.js",
-  "/src/style.css",
-  "/assets/images/Moha_tangxLogo.png",
+  "/index.html",
+  "/style.css",
+  "/app.js",
+  "/manifest.json",
+  "/serviceWorker.js",
+  "/assets/images/app-icon.png",
+  "/assets/images/icon-arrow.svg",
+  "/assets/images/Moha_tangx logo.jpg",
   "/assts/fonts/Poppins-Regular.ttf",
 ];
 
@@ -15,10 +19,10 @@ let cacheResources = async (resources) => {
 };
 
 self.addEventListener("install", async (e) => {
-  e.waitUntil(cacheResources(resources));
+  await e.waitUntil(cacheResources(resources));
 });
 
-let cacheFirst = async (request) => {
+let useCached = async (request) => {
   let cached = await caches.match(request);
   if (cached) {
     return cached;
@@ -34,5 +38,5 @@ let cacheFirst = async (request) => {
 };
 
 self.addEventListener("fetch", (e) => {
-  e.respondWith(cacheFirst(e.request));
+  e.respondWith(useCached(e.request));
 });
