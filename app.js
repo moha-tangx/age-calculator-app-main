@@ -115,7 +115,7 @@ button.addEventListener("click", (e) => {
       await navigator.serviceWorker.register("./serviceWorker.js");
     } catch (error) {
       const message = "someting went wrong";
-      console.error(message);
+      // console.error(message);
       alert(message);
     }
   }
