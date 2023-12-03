@@ -13,11 +13,11 @@ let yearsOut = document.getElementById("outputYear"),
 // current yaer month and day (today's date)
 let date = new Date(),
   currentYear = date.getFullYear(),
-  currentMonth = date.getMonth(),
+  currentMonth = date.getMonth() + 1,
   currentDay = date.getDate();
 
 // months of the year
-const year_Months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let year_Months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 //  set and remove error function
 const setErr = (field, message) => {
@@ -58,7 +58,6 @@ function valid() {
 
   return birthDay.error || birthMonth.error || birthYear.error;
 }
-
 function calculate() {
   let Days = currentDay - +birthDay.value.trim(),
     Months = currentMonth - +birthMonth.value.trim(),
@@ -88,7 +87,6 @@ function calculate() {
       yearsAnimi++;
     }
   }
-
   //animates age output
   setInterval(outputAge, 100);
 
