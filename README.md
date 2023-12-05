@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/moha-tangx/age-calculator-app-main)
+- Live Site URL: [Add live site URL here]( https://moha-tangx.github.io/age-calculator-app-main/)
 
 
 ### Built with
@@ -53,12 +53,12 @@ Users should be able to:
 
 never thought this challange will be this "*challenging..*" i learnet alot from this project alot more than i espected.
 
-It was while takig this cahllange that I come to know  that every four / hundred year is a leap year.. not a programming challenge ("literally") but it shows me how progmiig touches every aspect of our life...
+It was while takig this cahllange that I come to know  that every four / hundred year is a leap year.. not a programming challenge ("literally") but it shows me how progmig touches every aspect of our life...
 
 
 ## Author
 
-- Website - [moha_tangx](https://www.your-site.com)
-- Frontend Mentor - [@moha_tangx](https://www.frontendmentor.io/profile/moha_tangx)
-- Twitter - [@moha_tangx](https://www.twitter.com/moha-\tangx)
+<!-- - Website - [moha_tangx](https://www.your-site.com) -->
+- Frontend Mentor - [@moha_tangx](https://www.frontendmentor.io/profile/moha-tangx)
+- Twitter - [@moha_tangx](https://www.twitter.com/moha_tangx)
 
